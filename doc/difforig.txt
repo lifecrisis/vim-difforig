@@ -1,32 +1,30 @@
-*difforig.txt*  A polished implementation of the |:DiffOrig| command.
+*difforig.txt*  A polished version of the |:DiffOrig| command.      *difforig*
 
                                 vim-difforig
                                    v1.0.0
 
-                                   *difforig* *difforig-help* *vim-difforig*
-This plugin provides an enhanced version of the classic |:DiffOrig|
-operation.  See "|:DiffOrig|" to learn about the inspiration behind this
-simple plugin.
+This plugin provides an enhanced version of the classic |:DiffOrig| command.
+See |:DiffOrig| to learn about the inspiration behind this simple plugin.
 
-1. Introduction                                             |difforig-intro|
+1. Introduction                                               |difforig-intro|
 2. Features
-     A. The New ":DiffOrig" Command                       |difforig-command|
-     B. Default Mappings                                 |difforig-mappings|
-     C. Customization                               |difforig-customization|
-3. Conclusion                                          |difforig-conclusion|
-4. Contributing                                      |difforig-contributing|
+     A. The New ":DiffOrig" Command                         |difforig-command|
+     B. Default Mappings                                   |difforig-mappings|
+     C. Customization                                 |difforig-customization|
+3. Contributing                                        |difforig-contributing|
+4. Conclusion                                            |difforig-conclusion|
 
 ==============================================================================
 1. Introduction
 
-                                                            *difforig-intro*
+                                                              *difforig-intro*
 One of the first custom commands that many Vim users encounter is the
 |:DiffOrig| command.  The minimal effort required to develop a working
 implementation of this feature is striking, but the basic version of the
 command leaves much to be desired.  This plugin was created to provide
 a more pleasant interface to this useful feature.
 
-                                                     *difforig-improvements*
+                                                       *difforig-improvements*
 This script improves upon the classic |:DiffOrig| command in the following
 ways:
 
@@ -45,7 +43,7 @@ ways:
 ==============================================================================
 2. Features
 
-                                                          *difforig-command*
+                                                            *difforig-command*
 A. The New ":DiffOrig" Command
 
 :DiffOrig
@@ -53,7 +51,7 @@ A. The New ":DiffOrig" Command
     the buffer do not exist or if the file cannot be read, the operation
     will gracefully fail with a warning message.
 
-                                                         *difforig-mappings*
+                                                           *difforig-mappings*
 B. Default Mappings
 
 <Leader>o  or  <Plug>(DiffOrig)
@@ -62,10 +60,10 @@ B. Default Mappings
 
 q
     When viewing a diff tab, this key will quickly close the tab.  A message
-    reminds you that this operation is available whenever you open a diff
-    tab.
+    reminds you that this operation is available whenever you open a new
+    diff tab.
 
-                                                    *difforig-customization*
+                                                      *difforig-customization*
 C. Customization
 
 g:DiffOrigSetTabName()
@@ -74,20 +72,20 @@ g:DiffOrigSetTabName()
     default implementation for this function takes no action.
 
 ==============================================================================
-3. Conclusion
+3. Contributing
 
-                                                       *difforig-conclusion*
-Every attempt has been made in the development of this plugin follow the
-best practices for Vim plugin development.  The author sincerely hopes that
-users will enjoy using this feature.
-
-==============================================================================
-4. Contributing
-
-                                                     *difforig-contributing*
+                                                       *difforig-contributing*
 Issues may be reported on Github at the following URL:
 
     https://github.com/lifecrisis/vim-difforig
 
 Bug reports are always appreciated.  Any Pull requests submitted will be
-subject to review and revision by the plugin maintainer.
+subjected to review and revision by the plugin maintainer.
+
+==============================================================================
+4. Conclusion
+
+                                                         *difforig-conclusion*
+Every attempt has been made in the development of this plugin follow the
+best practices for Vim plugin development.  The author sincerely hopes that
+users will enjoy using this delightful feature.
