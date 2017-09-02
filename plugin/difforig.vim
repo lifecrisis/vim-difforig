@@ -1,3 +1,13 @@
+" ============================================================================
+" "difforig.vim" - A polished implementation of the ":DiffOrig" command.
+"
+" Maintainer:   Jason Franklin <j_fra@fastmail.us>
+" Last Change:  2017-09-02
+" Version:      1.0.0
+" License:      This project is released under the terms of the MIT License.
+" ============================================================================
+
+
 if v:version < 700 || &compatible
     finish
 endif
@@ -9,7 +19,7 @@ endif
 if exists('g:loaded_difforig')
     finish
 endif
-" let g:loaded_difforig = 1
+let g:loaded_difforig = 1
 
 " FUNCTION: s:CacheBufferContents() {{{1
 " Store the contents of the active buffer in a script-local cache.  The cache
@@ -70,8 +80,11 @@ function! s:PutFileContents(fileName)
     1delete _
 endfunction
 
-" }}}
-
+" FUNCTION: s:OpenDiffTab() {{{1
+" Open a new tab with vertically split windows showing a diff of the active
+" buffer with its representation on disk.
+" Returns:
+"     Always 0
 function! s:OpenDiffTab()
     let l:fileName = bufname('%')
     call s:CacheBufferContents()
@@ -87,6 +100,12 @@ function! s:OpenDiffTab()
     diffupdate
 endfunction
 
+" FUNCTION: s:SetDiffBufferOptions() {{{1
+" Initialize the buffer-local and window-local options for a new diff buffer.
+" Arguments:
+"     a:status - A string giving information for the buffer's status line
+" Returns:
+"     Always 0
 function! s:SetDiffBufferOptions(status)
     setlocal buftype=nofile
     setlocal filetype=
@@ -98,6 +117,7 @@ function! s:SetDiffBufferOptions(status)
         setlocal colorcolumn=0
         setlocal nocursorcolumn
         setlocal nocursorline
+        setlocal nospell
     endif
 
     if has('gui_running') || (exists('g:colors_name') && g:colors_name != 'default')
@@ -111,6 +131,12 @@ function! s:SetDiffBufferOptions(status)
     diffthis
 endfunction
 
+" FUNCTION: s:DiffOrig() {{{1
+" The main function that drives the command and the mapping defined by this
+" plugin.  This function will abort with a warning message when conditions for
+" its operation are unsuitable.
+" Returns:
+"     Always 0
 function! s:DiffOrig()
 
     if &buftype != '' || !filereadable(bufname('%'))
@@ -133,12 +159,11 @@ function! s:DiffOrig()
     call g:DiffOrigSetTabName()
 endfunction
 
+" }}}
+
 if !exists('*g:DiffOrigSetTabName')
     function g:DiffOrigSetTabName()
-
-        if exists(':NameTab') == 2
-            NameTab [DiffOrig]
-        endif
+        " pass
     endfunction
 endif
 
