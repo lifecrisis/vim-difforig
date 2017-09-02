@@ -3,7 +3,7 @@
 "
 " Maintainer:   Jason Franklin <j_fra@fastmail.us>
 " Last Change:  2017-09-02
-" Version:      0.1.0
+" Version:      1.0.0
 " License:      This project is released under the terms of the MIT License.
 " ============================================================================
 
