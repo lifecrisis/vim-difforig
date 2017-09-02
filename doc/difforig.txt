@@ -1,0 +1,93 @@
+*difforig.txt*  A polished implementation of the |:DiffOrig| command.
+
+                                vim-difforig
+                                   v1.0.0
+
+                                   *difforig* *difforig-help* *vim-difforig*
+This plugin provides an enhanced version of the classic |:DiffOrig|
+operation.  See "|:DiffOrig|" to learn about the inspiration behind this
+simple plugin.
+
+1. Introduction                                             |difforig-intro|
+2. Features
+     A. The New ":DiffOrig" Command                       |difforig-command|
+     B. Default Mappings                                 |difforig-mappings|
+     C. Customization                               |difforig-customization|
+3. Conclusion                                          |difforig-conclusion|
+4. Contributing                                      |difforig-contributing|
+
+==============================================================================
+1. Introduction
+
+                                                            *difforig-intro*
+One of the first custom commands that many Vim users encounter is the
+|:DiffOrig| command.  The minimal effort required to develop a working
+implementation of this feature is striking, but the basic version of the
+command leaves much to be desired.  This plugin was created to provide
+a more pleasant interface to this useful feature.
+
+                                                     *difforig-improvements*
+This script improves upon the classic |:DiffOrig| command in the following
+ways:
+
+  * The diff view is opened in a new tab so that the current workspace is
+    left completely undisturbed.
+  * Syntax highlighting is disabled so that the only visible highlighting is
+    that applied by the diff feature itself.
+  * The diff buffers are not modifiable so that multiple diff views can be
+    opened while remaining fully unrelated.  Each diff tab can be thought of
+    as an isolated snapshot capturing the current status of your change.
+  * The diff tab can be opened quickly with "<Leader>o" and closed quickly
+    with the "q" mapping.
+  * Side-effects of the operation are minimal as diff buffers are not listed
+    and user errors are managed gracefully.
+
+==============================================================================
+2. Features
+
+                                                          *difforig-command*
+A. The New ":DiffOrig" Command
+
+:DiffOrig
+    This command opens a new diff tab for the active buffer.  If changes to
+    the buffer do not exist or if the file cannot be read, the operation
+    will gracefully fail with a warning message.
+
+                                                         *difforig-mappings*
+B. Default Mappings
+
+<Leader>o  or  <Plug>(DiffOrig)
+    This mapping simply invokes the new ":DiffOrig" command in the context
+    of the active buffer.
+
+q
+    When viewing a diff tab, this key will quickly close the tab.  A message
+    reminds you that this operation is available whenever you open a diff
+    tab.
+
+                                                    *difforig-customization*
+C. Customization
+
+g:DiffOrigSetTabName()
+    This global function can be overridden by the user to set the name for
+    a diff tab.  It is called whenever a new diff tab is opened.  The
+    default implementation for this function takes no action.
+
+==============================================================================
+3. Conclusion
+
+                                                       *difforig-conclusion*
+Every attempt has been made in the development of this plugin follow the
+best practices for Vim plugin development.  The author sincerely hopes that
+users will enjoy using this feature.
+
+==============================================================================
+4. Contributing
+
+                                                     *difforig-contributing*
+Issues may be reported on Github at the following URL:
+
+    https://github.com/lifecrisis/vim-difforig
+
+Bug reports are always appreciated.  Any Pull requests submitted will be
+subject to review and revision by the plugin maintainer.
