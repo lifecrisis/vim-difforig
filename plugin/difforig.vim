@@ -1,3 +1,13 @@
+" ============================================================================
+" "difforig.vim" - A polished implementation of the ":DiffOrig" command.
+"
+" Maintainer:   Jason Franklin <j_fra@fastmail.us>
+" Last Change:  2017-09-02
+" Version:      0.1.0
+" License:      This project is released under the terms of the MIT License.
+" ============================================================================
+
+
 if v:version < 700 || &compatible
     finish
 endif
