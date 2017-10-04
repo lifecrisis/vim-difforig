@@ -1,8 +1,8 @@
-*difforig.txt*  A polished version of the |:DiffOrig| command.           *difforig*
+*difforig.txt*  A polished version of the |:DiffOrig| command.
 
                                 vim-difforig
                                    v1.0.0
-
+                                                                     *difforig*
 This plugin provides an enhanced version of the classic |:DiffOrig| command.
 See |:DiffOrig| to learn about the inspiration behind this simple plugin.
 
