@@ -2,14 +2,14 @@ function! difforig#main()
 
     if &buftype != '' || !filereadable(bufname('%'))
         echohl WarningMsg
-        echo 'difforig.vim: File not accessible.'
+        echomsg 'difforig.vim: File not accessible.'
         echohl None
         return
     endif
 
     if !&modified
         echohl WarningMsg
-        echo 'difforig.vim: No modifications.'
+        echomsg 'difforig.vim: No modifications.'
         echohl None
         return
     endif
