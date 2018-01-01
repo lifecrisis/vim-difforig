@@ -2,8 +2,8 @@
 " "difforig.vim" - A polished implementation of the ":DiffOrig" command.
 "
 " Maintainer:   Jason Franklin <j_fra@fastmail.us>
-" Last Change:  2017-12-29
-" Version:      1.1.1
+" Last Change:  2018-01-01
+" Version:      1.1.2
 " License:      This project is released under the terms of the MIT License.
 " ============================================================================
 
@@ -34,4 +34,4 @@ endif
 if !hasmapto('<Plug>(DiffOrig)')
     nmap <silent> <unique> <Leader>o <Plug>(DiffOrig)
 endif
-nnoremap <unique> <Plug>(DiffOrig) :call difforig#main()<CR>
+nnoremap <unique> <Plug>(DiffOrig) :<C-U>call difforig#main()<CR>
